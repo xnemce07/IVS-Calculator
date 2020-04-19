@@ -1,5 +1,7 @@
 #include "calculator.h"
 #include "ui_calculator.h"
+#include "dialoghelp.h"
+#include "CustomMath.h"
 
 bool floatOnDisplay=false;
 double prevOp=0.0;
@@ -7,8 +9,10 @@ char BinSymb=0;
 bool binSymbJustPressed=false;
 bool floatJustPressed=false;
 bool lastPressedIsEq=false;
+bool ERR=false;
 double newOp;
 
+CustomMath CMath;
 
 Calculator::Calculator(QWidget *parent)
     : QMainWindow(parent)
@@ -77,7 +81,7 @@ void Calculator::NumberPressed(){
         floatOnDisplay=false;
         lastPressedIsEq=false;
         binSymbJustPressed=false;
-    }else if(currentlyDisplayedS.length()<=16){
+    }else if(currentlyDisplayedS.length()<=10){
         newValS=currentlyDisplayedS+newValS;
         ui->Display->setText(newValS);
         lastPressedIsEq=false;
@@ -164,36 +168,95 @@ void Calculator::equalPressed(){
 
 
     switch (BinSymb) {
-        case 1: result=prevOp+newOp;break;
-        case 2: result=prevOp-newOp;break;
-        case 3: result=prevOp*newOp;break;
-        case 4: result=prevOp/newOp;break;
-        case 5: result=prevOp+newOp;break;
-        case 6: result=prevOp+newOp;break;
+        case 1:
+        try
+        {
+            result=CMath.addition(prevOp,newOp);
+        }catch(...){ERR=true;}
+        break;
+        case 2:
+        try
+        {
+            result=CMath.substraction(prevOp,newOp);
+        }catch(...){ERR=true;}
+        break;
+        case 3:
+        try
+        {
+            result=CMath.multiplication(prevOp,newOp);
+        }catch(...){ERR=true;}
+        break;
+        case 4:
+        try
+        {
+            result=CMath.division(prevOp,newOp);
+        }catch(...){ERR=true;}
+        break;
+        case 5:
+        try
+        {
+            result=CMath.power(prevOp,newOp);
+        }catch(...){ERR=true;}
+        break;
+        case 6:
+        try
+        {
+            result=CMath.root(prevOp,newOp);
+        }catch(...){ERR=true;}
+        break;
         default: result=newOp;break;
     }
 
 
 
+    if(!ERR){
+    ui->Display->setText(QString::number(result, 'g',10));
+    }else{ui->Display->setText("ERR");}
     lastPressedIsEq=true;
-    ui->Display->setText(QString::number(result, 'g',12));
     binSymbJustPressed=false;
+    ERR=false;
 }
 
 void Calculator::changePressed(){
+
     QString displayedS=ui->Display->text();
     double displayed=displayedS.toDouble();
     displayed*=-1;
-    ui->Display->setText(QString::number(displayed, 'g',12));
+    ui->Display->setText(QString::number(displayed, 'g',10));
 
 }
 
 void Calculator::unarySymbolPressed(){
     QPushButton *pressed=(QPushButton *)sender();
     QString pressedName=pressed->objectName();
+    QString unOpS=ui->Display->text();
+    double unOp=unOpS.toDouble();
+    double result;
+
     if(QString::compare(pressedName, "pushButton_fact",Qt::CaseSensitive)==0){
-        ui->Display->setText("Fact");
+        try
+        {
+            result=CMath.factorial(unOp);
+        }catch(...){ERR=true;}
     }else{
-        ui->Display->setText("Sin");
+        try
+        {
+            result=CMath.mySin(unOp);
+        }catch(...){ERR=true;}
     }
+    if(!ERR){
+    ui->Display->setText(QString::number(result, 'g',10));
+    }else{ui->Display->setText("ERR");}
+    ERR=false;
+    lastPressedIsEq=true;
+    binSymbJustPressed=false;
+}
+
+
+void Calculator::on_actionHelp_triggered()
+{
+
+    DialogHelp DialogHelp;
+    DialogHelp.setModal(true);
+    DialogHelp.exec();
 }

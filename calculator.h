@@ -27,5 +27,7 @@ private slots:
     void floatPressed();
     void deletePressed();
     void unarySymbolPressed();
+
+    void on_actionHelp_triggered();
 };
 #endif // CALCULATOR_H
