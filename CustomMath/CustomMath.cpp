@@ -25,13 +25,17 @@ double CustomMath::division(double dividend, double divisor)
 }
 
 double CustomMath::factorial(double n) {
-    if (n < 0) {
-        throw "Math error: factorial of negative/decimal number!\n";
+    double tmp = floor(n);
+    if (n != tmp){
+	throw "Math error: factorial - expected an integer!\n";
     }
-    if (n == 1 || n == 0)
+    if (tmp < 0) {
+        throw "Math error: factorial of a negative number!\n";
+    }
+    if (tmp == 1 || tmp == 0)
         return 1;
     else
-        return n * factorial(n - 1);
+        return tmp * factorial(tmp - 1);
 }
 
 double CustomMath::power(double a, double n) {
