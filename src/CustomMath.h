@@ -1,10 +1,13 @@
-/************************************************
-*@title math.h
-*
-*@brief lib containing implemented math functions
-*
-************************************************/
-#pragma once
+/**************************************************
+ *
+ * @title CustomMath.h
+ * @authors Miroslav Ilavsky xilavs02
+ * @authors Rudolf Hyksa xhyksa00
+ * @brief lib containing implemented math functions
+ * @date 19.4.2020
+ *
+ **************************************************/
+//#pragma once
 
 #define _USE_MATH_DEFINES
 #include <math.h>
@@ -14,6 +17,9 @@
 
 #define eps 0.0000000001
 
+/**
+ * @brief class used for mathematical operations
+ */
 class CustomMath
 {
 public:

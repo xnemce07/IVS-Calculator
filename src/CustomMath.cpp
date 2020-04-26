@@ -1,21 +1,50 @@
-#include "pch.h"
+/**************************************************
+ * @title CustomMath.cpp
+ * @authors Miroslav Ilavsky
+ * @authors Rudolf Hyksa
+ * @brief lib containing implemented math functions
+ * @date 19.4.2020
+ *
+ **************************************************/
+
+#include "tests/pch.h"
 #include "CustomMath.h"
 #include <stdlib.h>
 
-/******************************************/
-
+/**
+ * @brief addition of two doubles
+ * @param a addend1
+ * @param b addend2
+ * @return sum of [a] and [b]
+ */
 double CustomMath::addition(double a, double b) {
     return a + b;
 }
-
+/**
+ * @brief subtraction of two doubles
+ * @param a minued
+ * @param b subtrahend
+ * @return difference of [a] and [b]
+ */
 double CustomMath::substraction(double a, double b) {
     return a - b;
 }
-
+/**
+ * @brief multiplication of two doubles
+ * @param a factor1
+ * @param b factor2
+ * @return product of [a] and [b]
+ */
 double CustomMath::multiplication(double a, double b) {
     return a * b;
 }
-
+/**
+ * @brief division of two doubles
+ * @param a dividend
+ * @param b divisor
+ * @pre b != 0
+ * @return quotient of [a] and [b]
+ */
 double CustomMath::division(double dividend, double divisor)
 {
     if (divisor == 0.0) {
@@ -23,7 +52,12 @@ double CustomMath::division(double dividend, double divisor)
     }
     return (dividend / divisor);
 }
-
+/**
+ * @brief function used to calculate the factorial of an integer
+ * @param n to-be-used-as-input-for-factorial integer
+ * @pre n >= 0 && must be an integer
+ * @return factorial of [n]
+ */
 double CustomMath::factorial(double n) {
     double tmp = floor(n);
     if (n != tmp){
@@ -37,7 +71,13 @@ double CustomMath::factorial(double n) {
     else
         return tmp * factorial(tmp - 1);
 }
-
+/**
+ * @brief custom power function
+ * @param a basis
+ * @param n exponent
+ * @pre n must be an integer
+ * @return [a] to the power of [n]
+ */
 double CustomMath::power(double a, double n) {
     double exp = floor(n);
     if (n != exp) {
@@ -59,7 +99,13 @@ double CustomMath::power(double a, double n) {
             return power(a, n);
         }
 }
-
+/**
+ * @brief custom general root function
+ * @param a radinacd
+ * @param n degree
+ * @pre n must be an integer
+ * @return [n]th root of [a]
+ */
 double CustomMath::root(double a, double n) {
     int degree = floor(n);
     if (degree != n) {
@@ -100,7 +146,11 @@ double CustomMath::root(double a, double n) {
 
     return result;
 }
-
+/**
+ * @brief custom sin function
+ * @param cislo sin input in radians
+ * @return sin of [cislo]
+ */
 double CustomMath::mySin(double cislo)
 {
     cislo = toPi(cislo);
@@ -128,7 +178,11 @@ double CustomMath::mySin(double cislo)
 
     return hodnota;
 }
-
+/**
+ * @brief converts [a] to it's corresponding value in the interval <0, 2pi>
+ * @param a angle in radians
+ * @return converted value of [a]
+ */
 double CustomMath::toPi(double a) {
     if (a == 0)
         return 0;
