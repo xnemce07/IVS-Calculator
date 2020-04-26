@@ -7,7 +7,7 @@
  *
  **************************************************/
 
-#include "tests/pch.h"
+#include "pch.h"
 #include "CustomMath.h"
 #include <stdlib.h>
 
