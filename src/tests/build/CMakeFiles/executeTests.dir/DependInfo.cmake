@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/tests/math_test.cpp" "/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/tests/build/CMakeFiles/executeTests.dir/math_test.cpp.o"
+  "/home/xhyksa00/Desktop/IVS-Calculator/src/tests/math_test.cpp" "/home/xhyksa00/Desktop/IVS-Calculator/src/tests/build/CMakeFiles/executeTests.dir/math_test.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

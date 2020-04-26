@@ -1,4 +1,5 @@
-#include "pch.h"
+#include <gtest/gtest.h>
+#include "../pch.h"
 #include "../CustomMath.h"
 #include "../CustomMath.cpp"
 

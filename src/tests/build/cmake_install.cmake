@@ -1,4 +1,4 @@
-# Install script for directory: /home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/tests
+# Install script for directory: /home/xhyksa00/Desktop/IVS-Calculator/src/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/tests/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/xhyksa00/Desktop/IVS-Calculator/src/tests/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

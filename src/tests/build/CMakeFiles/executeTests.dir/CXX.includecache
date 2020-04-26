@@ -6,31 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/CustomMath.cpp
-tests/pch.h
-/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/tests/pch.h
+/home/xhyksa00/Desktop/IVS-Calculator/src/CustomMath.cpp
+pch.h
+/home/xhyksa00/Desktop/IVS-Calculator/src/pch.h
 CustomMath.h
-/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/CustomMath.h
+/home/xhyksa00/Desktop/IVS-Calculator/src/CustomMath.h
 stdlib.h
 -
 
-/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/CustomMath.h
+/home/xhyksa00/Desktop/IVS-Calculator/src/CustomMath.h
 math.h
 -
 
-/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/tests/math_test.cpp
-pch.h
-/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/tests/pch.h
-../CustomMath.h
-/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/CustomMath.h
-../CustomMath.cpp
-/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/CustomMath.cpp
-
-/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/tests/pch.h
-gtest/gtest.h
--
+/home/xhyksa00/Desktop/IVS-Calculator/src/pch.h
 stdlib.h
 -
 iostream
 -
+
+/home/xhyksa00/Desktop/IVS-Calculator/src/tests/math_test.cpp
+gtest/gtest.h
+-
+../pch.h
+/home/xhyksa00/Desktop/IVS-Calculator/src/pch.h
+../CustomMath.h
+/home/xhyksa00/Desktop/IVS-Calculator/src/CustomMath.h
+../CustomMath.cpp
+/home/xhyksa00/Desktop/IVS-Calculator/src/CustomMath.cpp
 
