@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/CustomMath.cpp
+tests/pch.h
+/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/tests/pch.h
+CustomMath.h
+/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/CustomMath.h
+stdlib.h
+-
+
+/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/CustomMath.h
+math.h
+-
+
+/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/tests/math_test.cpp
+pch.h
+/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/tests/pch.h
+../CustomMath.h
+/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/CustomMath.h
+../CustomMath.cpp
+/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/CustomMath.cpp
+
+/home/xhyksa00/Desktop/math_tests/IVS-Calculator/src/tests/pch.h
+gtest/gtest.h
+-
+stdlib.h
+-
+iostream
+-
+

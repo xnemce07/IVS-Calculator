@@ -1,7 +1,6 @@
 #include "pch.h"
-#include <stdlib.h>
-#include "CustomMath.h"
-#include "gtest/gtest.h"
+#include "../CustomMath.h"
+#include "../CustomMath.cpp"
 
 #define accuracy 1e-9
 
@@ -105,8 +104,8 @@ TEST_F(MathTests, Sin) {
 	EXPECT_NEAR(0.30901699437, unit.mySin(0.1 * M_PI), accuracy);
 }
 
-//int main(int argc, char** argv)
-//{
-//	::testing::InitGoogleTest(&argc, argv);
-//	return RUN_ALL_TESTS();
-//}
+int main(int argc, char** argv)
+{
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
+}
