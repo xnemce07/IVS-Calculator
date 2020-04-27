@@ -23,14 +23,12 @@ int main(int argc, char* argv[])
     outfile.open("data.txt",ios::trunc);
 
     double val;
-    val=rand() % 100000000000;
-    val=val/1000;
+    val=rand() % 100000000;
     outfile << setprecision(13) << val;
 
     for (int i = 1; i < count; i++)
     {
-        val=rand() % 100000000000;
-    val=val/10000;
+        val=rand() % 100000000;
     outfile << " " << setprecision(13) << val;
     }
     outfile.close();

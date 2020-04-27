@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <iostream>
-#include "CustomMath.h"
+#include "../src/CustomMath.h"
 
 int main() {
 	double tmp = 0;
@@ -8,21 +8,26 @@ int main() {
 	double sqrsum = 0;
 	int n = 0;
 
-	CustomMath unit;
+	CustomMath u;
 
 	while(!feof(stdin)) {
 		std::cin >> tmp;
-		std::cout << tmp << " ";
-		sum += tmp;
-		sqrsum += tmp * tmp;
-		n++;
+		sum = u.addition(sum, tmp);
+		sqrsum = u.addition(sqrsum, u.power(tmp, 2));
+		n = u.addition(n, 1);
 	}
 
-	double avg = sum / n;
+	double avg = u.division(sum, n);
 
-	double result = (((1 / (n - 1)) * (sqrsum - n * avg * avg)));
+	double result = u.substraction(n, 1);
+	result = u.division(1, result);
+	double result2 = u.power(avg, 2);
+	result2 = u.multiplication(n, result2);
+	result2 = u.substraction(sqrsum, result2);
+	result = u.multiplication(result, result2);
+	result = u.root(result, 2);
 
-	std::cout << result << " " << n << " " << sqrsum << " " << avg << std::endl;
+	std::cout << result << std::endl;
 
 	return 0;
 }
