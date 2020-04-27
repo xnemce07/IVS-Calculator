@@ -345,12 +345,12 @@ run:
 doc:
 	echo Doc
 test:
-	echo Test
+	cd tests/build && ./executeTests
 pack: clean
 	rm -rf Calculator
-	cd ../ && zip -r projekt.zip *
+	cd ../../ && zip -r xnemce07_xhyksa00_xkazim03_xilavs02.zip IVS-Calculator
 profile:
-	echo profile
+	cd ../profiling && g++ stddev.cpp CustomMath.* -lm -pg -o stddev
 
 
 
