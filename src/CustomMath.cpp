@@ -1,10 +1,9 @@
 /**************************************************
- * @title CustomMath.cpp
- * @authors Miroslav Ilavsky
- * @authors Rudolf Hyksa
+ * @file CustomMath.cpp
+ * @authors Miroslav Ilavsky, <xilavs02@stud.fit.vutbr.cz>
+ * @authors Rudolf Hyksa, <xhyksa00@stud.fit.vutbr.cz>
  * @brief lib containing implemented math functions
  * @date 19.4.2020
- *
  **************************************************/
 
 #include "pch.h"

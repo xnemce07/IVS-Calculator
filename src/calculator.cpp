@@ -1,3 +1,10 @@
+/*******************************************************
+ * @file calculator.cpp
+ * @author Leopold Nemcek, <xnemce07@stud.fit.vutbr.cz>
+ * @brief calculator button press actions
+ * @date 22.4.2020
+ ******************************************************/
+
 #include "calculator.h"
 #include "ui_calculator.h"
 #include "dialoghelp.h"
@@ -14,6 +21,9 @@ double newOp;
 
 CustomMath CMath;
 
+/**
+ * @brief constructor
+ **/
 Calculator::Calculator(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Calculator)
@@ -62,12 +72,17 @@ Calculator::Calculator(QWidget *parent)
 
 }
 
+/**
+ * @brief destructor
+ **/
 Calculator::~Calculator()
 {
     delete ui;
 }
 
-
+/**
+ * @brief shows number pressed on display
+ **/
 void Calculator::NumberPressed(){
     QPushButton *pressed=(QPushButton *)sender();
     QString newValS=pressed->text();
@@ -90,9 +105,12 @@ void Calculator::NumberPressed(){
 
 }
 
-
-
-
+/**
+ * Stores current display value as the first operand,
+ * and waits for the next operand.
+ * Button pressed indicates the function to be used ( + - * / )
+ * @brief stores first operand, defines function to be used, then waits for the second operand
+ **/
 void Calculator::binarySymbolPressed(){
     QPushButton *pressed=(QPushButton *)sender();
     QString symb=pressed->objectName();
@@ -119,6 +137,9 @@ void Calculator::binarySymbolPressed(){
     lastPressedIsEq=false;
 }
 
+/**
+ * @brief clear display and reset the calculator's state
+ **/
 void Calculator::clearPressed(){
     ui->Display->setText("0");
     floatOnDisplay=false;
@@ -128,6 +149,9 @@ void Calculator::clearPressed(){
     prevOp=0.0;
 }
 
+/**
+ * @brief add floating point
+ **/
 void Calculator::floatPressed(){
     if (binSymbJustPressed || lastPressedIsEq){
         ui->Display->setText("0.");
@@ -144,8 +168,9 @@ void Calculator::floatPressed(){
     binSymbJustPressed=false;
 }
 
-
-
+/**
+ * @brief delete last character
+ **/
 void Calculator::deletePressed(){
     QString onDisp=ui->Display->text();
     QString mostright=onDisp.right(1);
@@ -156,6 +181,9 @@ void Calculator::deletePressed(){
     binSymbJustPressed=false;
 }
 
+/**
+ * @brief show result
+ **/
 void Calculator::equalPressed(){
     double result=0.0;
     QString newOpS=ui->Display->text();
@@ -217,6 +245,9 @@ void Calculator::equalPressed(){
     ERR=false;
 }
 
+/**
+ * @brief show inversed value of current number (+/-)
+ **/
 void Calculator::changePressed(){
 
     QString displayedS=ui->Display->text();
@@ -226,6 +257,9 @@ void Calculator::changePressed(){
 
 }
 
+/**
+ * @brief factorial or sin button press - show result
+ **/
 void Calculator::unarySymbolPressed(){
     QPushButton *pressed=(QPushButton *)sender();
     QString pressedName=pressed->objectName();
@@ -252,7 +286,9 @@ void Calculator::unarySymbolPressed(){
     binSymbJustPressed=false;
 }
 
-
+/**
+ * @brief opens dialog help window
+ **/
 void Calculator::on_actionHelp_triggered()
 {
 
