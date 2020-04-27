@@ -1,3 +1,10 @@
+/**********************************************************
+ * @file stddev.cpp
+ * @author Miroslav Ilavsky, <xilavs02@stud.fit.vutbr.cz>
+ * @brief standard deviation
+ * @date 25.4.2020
+ **********************************************************/
+
 #include <stdlib.h>
 #include <iostream>
 #include "../src/CustomMath.h"

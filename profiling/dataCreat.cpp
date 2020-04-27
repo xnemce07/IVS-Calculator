@@ -1,3 +1,10 @@
+/**************************************************************
+ * @file dataCreat.cpp
+ * @author Leopold Nemcek, <xnemce07@stud.fit.vutbr.cz>
+ * @brief creates an input file for stddev.cpp
+ * @date 26.6.2020
+ **************************************************************/
+
 #include <iostream>
 #include <cstdlib>
 #include <stdio.h>
