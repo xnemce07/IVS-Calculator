@@ -1,13 +1,10 @@
 /**************************************************
- *
- * @title CustomMath.h
- * @authors Miroslav Ilavsky xilavs02
- * @authors Rudolf Hyksa xhyksa00
+ * @file CustomMath.h
+ * @authors Miroslav Ilavsky <xilavs02@stud.fit.vutbr.cz>
+ * @authors Rudolf Hyksa <xhyksa00@stud.fit.vutbr.cz>
  * @brief lib containing implemented math functions
  * @date 19.4.2020
- *
  **************************************************/
-//#pragma once
 
 #define _USE_MATH_DEFINES
 #include <math.h>

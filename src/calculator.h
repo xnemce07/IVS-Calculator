@@ -1,3 +1,10 @@
+/*********************************************************
+ * @file calculator.h
+ * @author Leopold Nemcek, <xnemce07@stud.fit.vutbr.cz>
+ * @brief calculator button presse actions header
+ * @date 22.4.2020
+ *********************************************************/
+
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
 

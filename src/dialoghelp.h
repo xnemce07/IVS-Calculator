@@ -1,3 +1,10 @@
+/********************************************************
+ * @file dialoghelp.h
+ * @author Leopold Nemcek, <xnemce07@stud.fit.vutbr.cz>
+ * @brief help dialog header
+ * @date 22.4.2020
+ ********************************************************/
+
 #ifndef DIALOGHELP_H
 #define DIALOGHELP_H
 
