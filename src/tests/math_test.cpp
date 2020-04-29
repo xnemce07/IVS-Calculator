@@ -1,3 +1,10 @@
+/************************************************
+ * @file math_test.cpp
+ * @author xhyksa00 <xhyksa00@stud.fit.vutbr.cz>
+ * @brief tests for custom math library
+ * @date 11.4.2020
+ ***********************************************/
+
 #include <gtest/gtest.h>
 #include "../pch.h"
 #include "../CustomMath.h"

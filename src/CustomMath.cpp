@@ -39,8 +39,8 @@ double CustomMath::multiplication(double a, double b) {
 }
 /**
  * @brief division of two doubles
- * @param a dividend
- * @param b divisor
+ * @param dividend dividend
+ * @param divisor divisor
  * @pre b != 0
  * @return quotient of [a] and [b]
  */
