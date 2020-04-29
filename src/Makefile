@@ -345,7 +345,7 @@ distclean: clean
 run:
 	./Calculator
 doc:
-	echo Doc
+	doxygen Doxyfile
 test:
 	cd tests/build && ./executeTests
 pack: clean
