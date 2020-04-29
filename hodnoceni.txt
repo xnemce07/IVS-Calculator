@@ -1,0 +1,4 @@
+xnemce07 140 (GUI, organizacia, pomoc s profilingom, oprava kniznic, Makefile)
+xhyksa00 130 (Testy,oprava kniznic, dokumentacia, pomoc s Makefile)
+xkazim03 130 (Instalator, pomoc s profilingom, organizacia GIT-u, pomoc s Makefile)
+xilavs02   0 (Kniznice, profiling)
