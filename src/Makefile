@@ -35,7 +35,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = Calculator1.0.0
-DISTDIR = /home/xnemce07/Documents/IVS\ calc/testmake/IVS-Calculator/src/.tmp/Calculator1.0.0
+DISTDIR = /home/xnemce07/Documents/IVS\ calc/git/IVS-Calculator/src/.tmp/Calculator1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1
 LIBS          = $(SUBLIBS) -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
@@ -340,6 +340,8 @@ distclean: clean
 	-$(DEL_FILE) $(TARGET) 
 	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
+
+
 run:
 	./Calculator
 doc:
@@ -350,8 +352,7 @@ pack: clean
 	rm -rf Calculator
 	cd ../../ && zip -r xnemce07_xhyksa00_xkazim03_xilavs02.zip IVS-Calculator
 profile:
-	cd ../profiling && g++ stddev.cpp CustomMath.* -lm -pg -o stddev
-
+	cd ../profiling && g++ stddev.cpp ../src/CustomMath.* -lm -pg -o stddev
 
 
 ####### Sub-libraries
@@ -384,12 +385,12 @@ compiler_moc_header_clean:
 moc_calculator.cpp: calculator.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/xnemce07/Documents/IVS calc/testmake/IVS-Calculator/src' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include calculator.h -o moc_calculator.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/xnemce07/Documents/IVS calc/git/IVS-Calculator/src' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include calculator.h -o moc_calculator.cpp
 
 moc_dialoghelp.cpp: dialoghelp.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/xnemce07/Documents/IVS calc/testmake/IVS-Calculator/src' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include dialoghelp.h -o moc_dialoghelp.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/xnemce07/Documents/IVS calc/git/IVS-Calculator/src' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include dialoghelp.h -o moc_dialoghelp.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -414,7 +415,8 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 
 ####### Compile
 
-CustomMath.o: CustomMath.cpp CustomMath.h
+CustomMath.o: CustomMath.cpp pch.h \
+		CustomMath.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o CustomMath.o CustomMath.cpp
 
 dialoghelp.o: dialoghelp.cpp dialoghelp.h \
@@ -442,13 +444,13 @@ moc_dialoghelp.o: moc_dialoghelp.cpp
 ####### Install
 
 install_target: first FORCE
-	@test -d $(INSTALL_ROOT)/opt/Calculator/bin || mkdir -p $(INSTALL_ROOT)/opt/Calculator/bin
-	-$(QINSTALL_PROGRAM) $(QMAKE_TARGET) $(INSTALL_ROOT)/opt/Calculator/bin/$(QMAKE_TARGET)
-	-$(STRIP) $(INSTALL_ROOT)/opt/Calculator/bin/$(QMAKE_TARGET)
+	@test -d $(INSTALL_ROOT)/bin || mkdir -p $(INSTALL_ROOT)/bin
+	-$(QINSTALL_PROGRAM) $(QMAKE_TARGET) $(INSTALL_ROOT)/bin/$(QMAKE_TARGET)
+	-$(STRIP) $(INSTALL_ROOT)/bin/$(QMAKE_TARGET)
 
 uninstall_target: FORCE
-	-$(DEL_FILE) $(INSTALL_ROOT)/opt/Calculator/bin/$(QMAKE_TARGET)
-	-$(DEL_DIR) $(INSTALL_ROOT)/opt/Calculator/bin/ 
+	-$(DEL_FILE) $(INSTALL_ROOT)/bin/$(QMAKE_TARGET)
+	-$(DEL_DIR) $(INSTALL_ROOT)/bin/ 
 
 
 install: install_target  FORCE
