@@ -1,0 +1,13 @@
+Repozitar sme mali na GitHube-e, pretoze na server IVS sa nepodarilo pripojit 3 ludom z timu. Vyvoj testov a kniznic sa oneskoril dokopy asi o tyzden a pol, takze instalator a vlastne vsetko co nasledovalo po odovzdani kniznic muselo but spravene rychlejsie ako sme si povodne predstavovali. Taktiez boli mierne problemy s matematickou kniznicou, ktoru sme museli este trochu "opravit", takze zistenie, ze sme dostali na odovzdanie dalsi tyzden nas celkom potesilo. Celkovo takmer vsetko zaberalo viacej casu, ako sme cakali, kvoli rieseniu tykajucich sa roznych problemov tykajucich sa linkovania, spustania testov z makefile a mnohych dalsich "malickosti". Pri buducom planovani projektov by som si rozhodne nechal na vsetko vacsiu casovu rezervu.
+
+
+
+SKUTOCNOST
+18.3  - Plan projektu
+8.4.  - Zaklad GUI
+11.4. - Testy na matematicku kniznicu
+17.4. - Prva verzia kniznice
+20.4. - Finalny stav kniznice, zapojenie kniznice do GUI, help dialog
+26.4. - Dokumentacia
+27.4. - Instalator
+29.4. - Profiling, odovzdanie
