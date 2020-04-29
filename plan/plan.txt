@@ -26,8 +26,8 @@ xkazim03:instalator, profiling
 
 CASOVY PLAN:
 18.3. - Plan projektu
-30.3. - Testy na matematickĂş kniĹžnicu
-7.4. - ZĂĄkladnĂŠ verzie kniĹžnĂ­c,modulov a prototyp grafiky
+30.3. - Testy na matematicku kniznicu
+7.4.  - Zakladne verzie kniznic,modulov a prototyp grafiky
 14.4. -  Pokrocile matematicke funkcie, profilling, pokroeilejsia verzia programu a grafiky
 21.4. - Dokumentacia, instalator, posledne testy a mockup novej kalkulacky
 22.4. - Odovzdanie
