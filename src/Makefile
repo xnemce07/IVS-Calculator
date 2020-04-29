@@ -341,7 +341,6 @@ distclean: clean
 	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
-
 run:
 	./Calculator
 doc:
@@ -353,7 +352,6 @@ pack: clean
 	cd ../../ && zip -r xnemce07_xhyksa00_xkazim03_xilavs02.zip IVS-Calculator
 profile:
 	cd ../profiling && g++ stddev.cpp ../src/CustomMath.* -lm -pg -o stddev
-
 
 ####### Sub-libraries
 
