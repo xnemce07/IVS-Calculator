@@ -9,7 +9,7 @@ Autori
 Frajeri
 - xnemce07 Leopold Nemcek
 - xkazim03 Tomas Kazimir
-- xilavs02 Miroslav Ilavksy
+- xilavs02 Miroslav Ilavsky
 - xhyksa00 Rudolf Hyksa
 
 Licencia
